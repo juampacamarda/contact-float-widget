@@ -44,6 +44,7 @@ class CFW_Renderer {
 	public function render_widget( $atts ) {
 		// Obtener configuración
 		$settings = get_option( 'cfw_settings', array() );
+		$widget_title = isset( $settings['widget_title'] ) ? $settings['widget_title'] : __( 'Contactar', 'contact-float-widget' );
 		$primary_color = isset( $settings['primary_color'] ) ? $settings['primary_color'] : '#25d366';
 		$side = isset( $settings['side'] ) ? $settings['side'] : 'right';
 		$offset_top = isset( $settings['offset_top'] ) ? $settings['offset_top'] : '110';
@@ -68,7 +69,7 @@ class CFW_Renderer {
 		<div class="<?php echo esc_attr( implode( ' ', $widget_classes ) ); ?>" style="--primary: <?php echo esc_attr( $primary_color ); ?>; top: <?php echo esc_attr( $offset_top ); ?>px;">
 			<button class="cfw-toggle" aria-expanded="<?php echo '1' === $show_open ? 'true' : 'false'; ?>" aria-controls="cfw-panel">
 				<span class="cfw-icon" aria-hidden="true"><?php echo $this->get_default_icon( 'toggle' ); ?></span>
-				<span><?php esc_html_e( 'Contactar', 'contact-float-widget' ); ?></span>
+				<span><?php echo esc_html( $widget_title ); ?></span>
 			</button>
 			<div id="cfw-panel" class="cfw-panel" role="region" <?php echo '1' !== $show_open ? 'hidden' : ''; ?>>
 				<div class="cfw-panel-body">

@@ -48,6 +48,7 @@ add_action( 'plugins_loaded', 'cfw_init' );
 function cfw_activate() {
 	// Configuración por defecto
 	$default_options = array(
+		'widget_title' => 'Contactar',
 		'primary_color' => '#25d366',
 		'side' => 'right',
 		'offset_top' => '110',

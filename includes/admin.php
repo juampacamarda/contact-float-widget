@@ -55,6 +55,9 @@ class CFW_Admin {
 	public function sanitize_settings( $input ) {
 		$sanitized = array();
 
+		// Título del widget
+		$sanitized['widget_title'] = isset( $input['widget_title'] ) ? sanitize_text_field( $input['widget_title'] ) : 'Contactar';
+
 		// Color principal
 		$sanitized['primary_color'] = isset( $input['primary_color'] ) ? sanitize_hex_color( $input['primary_color'] ) : '#25d366';
 
@@ -117,6 +120,7 @@ class CFW_Admin {
 		}
 
 		$settings = get_option( 'cfw_settings', array() );
+		$widget_title = isset( $settings['widget_title'] ) ? $settings['widget_title'] : 'Contactar';
 		$primary_color = isset( $settings['primary_color'] ) ? $settings['primary_color'] : '#25d366';
 		$side = isset( $settings['side'] ) ? $settings['side'] : 'right';
 		$offset_top = isset( $settings['offset_top'] ) ? $settings['offset_top'] : 110;
@@ -134,6 +138,16 @@ class CFW_Admin {
 				?>
 
 				<table class="form-table">
+					<tr>
+						<th scope="row">
+							<label for="cfw_widget_title"><?php esc_html_e( 'Título del widget', 'contact-float-widget' ); ?></label>
+						</th>
+						<td>
+							<input type="text" id="cfw_widget_title" name="cfw_settings[widget_title]" value="<?php echo esc_attr( $widget_title ); ?>" class="regular-text" />
+							<p class="description"><?php esc_html_e( 'Texto que se muestra en el botón del widget.', 'contact-float-widget' ); ?></p>
+						</td>
+					</tr>
+
 					<tr>
 						<th scope="row">
 							<label for="cfw_primary_color"><?php esc_html_e( 'Color principal', 'contact-float-widget' ); ?></label>
