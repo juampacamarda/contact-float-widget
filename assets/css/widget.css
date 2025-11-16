@@ -1,0 +1,290 @@
+/**
+ * Estilos del widget flotante de contacto
+ * Contact Float Widget - Frontend Styles
+ */
+
+/* Variables CSS */
+:root {
+	--cfw-primary: #25d366;
+	--cfw-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+	--cfw-border-radius: 40px 0 0 40px;
+	--cfw-border-radius-open: 25px 0 0 10px;
+	--cfw-transition: all ease 0.5s;
+}
+
+/* Widget principal */
+.cfw-widget {
+	position: fixed;
+	z-index: 10000;
+	top: 110px;
+	box-shadow: var(--cfw-shadow);
+	border-radius: var(--cfw-border-radius);
+	overflow: hidden;
+	border: 2px solid #fff;
+	transition: var(--cfw-transition);
+	padding: 0;
+	background: #fff;
+}
+
+/* Posición derecha (por defecto) */
+.cfw-widget--right {
+	right: -185px;
+}
+
+.cfw-widget--right:hover,
+.cfw-widget--right.is-open {
+	right: -3px;
+}
+
+.cfw-widget--right.is-open {
+	border-radius: var(--cfw-border-radius-open);
+}
+
+/* Posición izquierda */
+.cfw-widget--left {
+	left: -185px;
+	right: auto;
+	border-radius: 0 40px 40px 0;
+}
+
+.cfw-widget--left:hover,
+.cfw-widget--left.is-open {
+	left: -3px;
+}
+
+.cfw-widget--left.is-open {
+	border-radius: 0 25px 10px 0;
+}
+
+/* Botón de toggle */
+.cfw-toggle {
+	background: var(--primary, var(--cfw-primary));
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 240px;
+	min-height: 44px;
+	padding: 15px 20px;
+	border: 0;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: inherit;
+	font-weight: 700;
+	transition: filter 0.2s ease;
+
+}
+
+.cfw-toggle:hover {
+	filter: brightness(0.9);
+}
+
+.cfw-toggle:focus {
+	outline: none;
+	outline-offset: unset;
+}
+
+.cfw-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15px;
+}
+
+.cfw-icon svg {
+	width: 26px;
+	height: 26px;
+	fill: currentColor;
+}
+
+/* Panel */
+.cfw-panel {
+	background: #fff;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cfw-panel:not([hidden]) {
+	max-height: 600px;
+	overflow-y: auto;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.cfw-panel-body {
+	padding: 5px 15px 15px;
+	animation: fadeInContent 0.4s ease 0.1s both;
+}
+
+/* Animación para el contenido del panel */
+@keyframes fadeInContent {
+	from {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Título de sección */
+.cfw-section-title {
+	margin: 20px 0 10px 0;
+	color: var(--primary, var(--cfw-primary));
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Items de contacto */
+.cfw-item {
+	display: flex;
+	min-width: 200px;
+	flex-direction: row;
+	align-items: center;
+	padding: 8px 0;
+	color: #5b5a5d;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.cfw-item:hover {
+	color: var(--primary, var(--cfw-primary));
+}
+
+.cfw-item:focus {
+	outline: 2px solid var(--primary, var(--cfw-primary));
+	outline-offset: 2px;
+}
+
+.cfw-item__media {
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	margin-right: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cfw-item__media svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+.cfw-item__text {
+	flex: 1;
+}
+
+.cfw-item__text h5 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.cfw-item__text p {
+	margin: 0;
+	font-size: 12px;
+	color: #999;
+	line-height: 1.3;
+}
+
+/* Separador */
+.cfw-hr {
+	border: 0;
+	border-top: 1px solid #eee;
+	margin: 8px 0;
+}
+
+/* Quitar último separador */
+.cfw-panel-body > .cfw-hr:last-child {
+	display: none;
+}
+
+/* Panel cuando está oculto */
+.cfw-panel[hidden] {
+	display: block !important;
+	max-height: 0;
+	opacity: 0;
+	transform: translateY(-10px);
+	pointer-events: none;
+}
+
+/* Accesibilidad: reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+	.cfw-widget,
+	.cfw-toggle,
+	.cfw-panel,
+	.cfw-item {
+		transition: none;
+	}
+	
+	.cfw-panel-body {
+		animation: none;
+	}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.cfw-widget {
+		top: 60px;
+	}
+	
+	.cfw-toggle {
+		width: 200px;
+		min-height: 40px;
+		font-size: 14px;
+	}
+	
+	.cfw-widget--right {
+		right: -165px;
+	}
+	
+	.cfw-widget--right:hover,
+	.cfw-widget--right.is-open {
+		right: -3px;
+	}
+	
+	.cfw-widget--left {
+		left: -165px;
+	}
+	
+	.cfw-widget--left:hover,
+	.cfw-widget--left.is-open {
+		left: -3px;
+	}
+}
+
+/* Scroll suave en el panel */
+.cfw-panel {
+	scrollbar-width: thin;
+	scrollbar-color: var(--primary, var(--cfw-primary)) #f1f1f1;
+}
+
+.cfw-panel::-webkit-scrollbar {
+	width: 6px;
+}
+
+.cfw-panel::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.cfw-panel::-webkit-scrollbar-thumb {
+	background: var(--primary, var(--cfw-primary));
+	border-radius: 3px;
+}
+
+.cfw-panel::-webkit-scrollbar-thumb:hover {
+	background: var(--primary, var(--cfw-primary));
+	filter: brightness(0.8);
+}

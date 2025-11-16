@@ -1,0 +1,215 @@
+/**
+ * Estilos para la página de administración
+ * Contact Float Widget - Admin Styles
+ */
+
+/* Contenedor de secciones */
+#cfw-sections-container {
+	margin-bottom: 15px;
+}
+
+/* Sección individual */
+.cfw-section {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.cfw-section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+
+.cfw-section-header h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* Contenedor de items */
+.cfw-items-container {
+	margin-bottom: 15px;
+}
+
+/* Item individual */
+.cfw-item-wrapper {
+	background: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 15px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.cfw-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.cfw-item-header strong {
+	font-size: 14px;
+	color: #23282d;
+}
+
+/* Botones */
+.cfw-add-section,
+.cfw-add-item {
+	margin-top: 10px;
+}
+
+.cfw-remove-section,
+.cfw-remove-item {
+	color: #b32d2e;
+	border-color: #b32d2e;
+}
+
+.cfw-remove-section:hover,
+.cfw-remove-item:hover {
+	color: #fff;
+	background: #b32d2e;
+	border-color: #b32d2e;
+}
+
+/* Color picker */
+.cfw-color-picker {
+	max-width: 100px;
+}
+
+/* Campos de item */
+.cfw-item-wrapper p {
+	margin-bottom: 15px;
+}
+
+.cfw-item-wrapper label {
+	display: inline-block;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+.cfw-item-wrapper .description {
+	display: block;
+	margin-top: 5px;
+	font-style: italic;
+	color: #666;
+}
+
+/* Selector de tipo de item */
+.cfw-item-type {
+	min-width: 150px;
+}
+
+/* Preview de icono */
+.cfw-icon-preview {
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+/* Botones de icono */
+.cfw-select-icon,
+.cfw-remove-icon {
+	margin-right: 5px;
+}
+
+/* Campos específicos por tipo */
+.cfw-item-field {
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-top: 10px;
+}
+
+/* Sección de exportar/importar */
+.wrap hr {
+	margin: 30px 0;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+.wrap h2 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.wrap h3 {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+/* Código del shortcode */
+.wrap code {
+	background: #f9f9f9;
+	padding: 5px 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 14px;
+	display: inline-block;
+	margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+	.cfw-section-header,
+	.cfw-item-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.cfw-remove-section,
+	.cfw-remove-item {
+		margin-top: 10px;
+	}
+}
+
+/* Animación para nuevos elementos */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.cfw-section,
+.cfw-item-wrapper {
+	animation: fadeIn 0.3s ease;
+}
+
+/* Mensajes de error y éxito */
+.cfw-message {
+	padding: 10px 15px;
+	margin: 15px 0;
+	border-radius: 4px;
+	border-left: 4px solid;
+}
+
+.cfw-message.success {
+	background: #ecf7ed;
+	border-color: #46b450;
+	color: #155724;
+}
+
+.cfw-message.error {
+	background: #f8d7da;
+	border-color: #dc3232;
+	color: #721c24;
+}
