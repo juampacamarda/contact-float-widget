@@ -157,7 +157,7 @@ Editar el archivo `.pot` en la carpeta `languages/` o usar plugins como Loco Tra
 
 ## Autor
 
-Tu Nombre - [tu-sitio-web.com](https://tu-sitio-web.com)
+Juampa Camarda
 
 ## Licencia
 
