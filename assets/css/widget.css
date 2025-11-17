@@ -15,7 +15,7 @@
 /* Widget principal */
 .cfw-widget {
 	position: fixed;
-	z-index: 10000;
+	z-index: 999999;
 	top: 110px;
 	box-shadow: var(--cfw-shadow);
 	border-radius: var(--cfw-border-radius);
@@ -24,11 +24,12 @@
 	transition: var(--cfw-transition);
 	padding: 0;
 	background: #fff;
+  min-width: 290px;
 }
 
 /* Posición derecha (por defecto) */
 .cfw-widget--right {
-	right: -185px;
+	right: calc( 50px - 280px );
 }
 
 .cfw-widget--right:hover,
@@ -178,7 +179,7 @@
 .cfw-item__media svg {
 	width: 50px;
 	height: 50px;
-	fill: var(--cfw-primary);
+	fill: var(--primary, var(--cfw-primary));
 }
 
 .cfw-item__text {
