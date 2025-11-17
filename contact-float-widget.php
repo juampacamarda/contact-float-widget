@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contact Float Widget
  * Description: Widget flotante de contacto configurable con WhatsApp, email y enlaces personalizados.
- * Version: 1.0.16112025818
+ * Version: 1.0.171120250902
  * Author: Juampa Camarda
  * Text Domain: contact-float-widget
  * Domain Path: /languages
