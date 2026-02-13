@@ -163,6 +163,3 @@ Juampa Camarda
 
 GPL v2 or later
 
-## Soporte
-
-Para reportar bugs o solicitar características, visita el [repositorio del plugin](https://github.com/tu-usuario/contact-float-widget).
